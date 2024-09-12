@@ -11,3 +11,12 @@ color:white;
 .fontu{
     font-family: sans-serif;
 }
+.mar{
+margin-right: 75px;
+
+}
+@media screen and (max-width:572px) { 
+    .mar{
+        margin-left: 10px;
+    }
+}

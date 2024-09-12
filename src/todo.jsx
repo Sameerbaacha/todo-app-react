@@ -37,8 +37,8 @@ const TodoCreate = () => {
             </div>
             <div className="mt-5">
                 {items.map((data, index) => (
-                    <div key={index} className="flex justify-center items-center mt-3">
-                        <h1 className="text-wrap w-full max-w-xs font-bold text-center text-white fontu">{data}</h1>
+                    <div key={index} className="flex justify-center  items-center mt-3 ">
+                        <h1 className="w-full rounded-md p-1 bor mar text-wrap max-w-xs font-bold text-center text-white fontu ">{data}</h1>
                         <Button
                             onclick={() => deleteSingleTodo(index)}
                             label={<i>&#10006;</i>}
