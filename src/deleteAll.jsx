@@ -7,7 +7,7 @@ const DeleteAll = ({ onclick }) => {
         onClick={onclick}
         className="cursor-pointer px-4 py-2 rounded-md m-2 bg-red-600 text-white"
       >
- &#128465;      </button>
+        &#128465;      </button>
     </div>
   );
 };

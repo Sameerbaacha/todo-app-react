@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './button';
 import DeleteAll from './deleteAll';
 
 const TodoCreate = () => {
     const [todo, setTodo] = useState('');
-    const [items, setItems] = useState(['namaz', 'university', 'cricket']);
+    const [items, setItems] = useState(() => {
+        const savedItems = localStorage.getItem('todoItems');
+        return savedItems ? JSON.parse(savedItems) : ['namaz', 'university', 'cricket'];
+    });
+
+
+    useEffect(() => {
+        localStorage.setItem('todoItems', JSON.stringify(items));
+    }, [items]);
 
     function addToDo() {
         if (todo) {
@@ -15,6 +23,7 @@ const TodoCreate = () => {
 
     function deleteToDo() {
         setItems([]);
+        localStorage.removeItem("todoItems")
     }
 
     function deleteSingleTodo(index) {
